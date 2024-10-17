@@ -216,12 +216,10 @@ def exibir_teoria_do_modelo():
     \hat{y}_i = y_i + \sum_{m=1}^{M} \gamma_m h_m(x_i)
     """)
     
-    st.write(""" Onde:
-    - y_i é a predição final para a amostra \( i \).
+    st.write(""" Onde: - y_i é a predição final para a amostra \( i \).
     - yi é o valor inicial.
     - γmHm(xi) são as árvores de decisão ajustadas ao longo de várias iterações.
-    - γ_m é o peso (ou taxa de aprendizado) que define quanto o modelo ajusta com cada nova árvore.
-    """)
+    - γ_m é o peso (ou taxa de aprendizado) que define quanto o modelo ajusta com cada nova árvore.""")
 
 
 
