@@ -100,7 +100,7 @@ def intro():
 
     # Detalhes das variáveis com tabelas explicativas
     ### Escalas de Avaliação das Variáveis:
-    st.markdown("""
+        st.markdown("""
     **Estágio de Desenvolvimento das Plantas**:
     1. Ausência de folhas senescentes, elevado crescimento.
     2. Predominância de folhas verdes, colmos finos.
