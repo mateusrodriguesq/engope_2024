@@ -75,7 +75,7 @@ def intro():
 # Equipe e Contato
     st.subheader("Equipe e Contato")
     st.markdown("""
-    Este projeto é desenvolvido para o 1º Datathon dentro do **6º Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
+    Este projeto é desenvolvido para o **1º Datathon** do **6º Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
     
     Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**""")
 
