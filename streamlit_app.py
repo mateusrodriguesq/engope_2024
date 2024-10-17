@@ -63,7 +63,7 @@ def intro():
     st.subheader("Sobre o Conjunto de Dados")
     st.markdown("""
     O monitoramento das **pastagens tropicais brasileiras** é essencial para garantir um manejo sustentável, dada a sua ampla diversidade de espécies e a sua vulnerabilidade à degradação. O conjunto de dados utilizado foi coletado em Goiás, em parceria com o **MapBiomas**, com o objetivo de mapear as áreas de pastagem e avaliar seu nível de degradação, essencial para a preservação ambiental.
-
+    """)
     # Como Funciona
         st.subheader("Como Funciona")
         st.markdown("""
