@@ -82,7 +82,7 @@ def intro():
 
 
     ### 6.1 Coleta de Campo
-    A coleta foi realizada dentro de unidades amostrais (UA) de **30x30m (900m²)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
+    A coleta foi realizada dentro de unidades amostrais (UA) de **30x30m (900m\u00B2)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
 """)
 
     if st.button("Ver mais informações sobre a coleta de campo"):
@@ -100,9 +100,8 @@ def intro():
     """)
 
     # Detalhes das variáveis com tabelas explicativas
-        st.markdown("""
     ### Escalas de Avaliação das Variáveis:
-
+    st.markdown("""
     **Estágio de Desenvolvimento das Plantas**:
     1. Ausência de folhas senescentes, elevado crescimento.
     2. Predominância de folhas verdes, colmos finos.
@@ -137,8 +136,7 @@ def intro():
     4. Condição média, TL entre 0,7 a 1,0 UA/ha.
     5. Boa condição, TL entre 1,0 a 2,0 UA/ha.
     6. Próximo ao máximo, TL entre 2,0 a 3,0 UA/ha.
-    7. Excelente condição, TL > 3,0 UA/ha.
-    """)
+    7. Excelente condição, TL > 3,0 UA/ha.""")
 
 
 
@@ -198,8 +196,7 @@ def page_eda():
         <div style="display: flex; align-items: center;">
             <span>{label}</span>
             <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
-        </div>
-        """, unsafe_allow_html=True)
+        </div>""", unsafe_allow_html=True)
         st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
 
     c1, c2, c3 = st.columns(3)
