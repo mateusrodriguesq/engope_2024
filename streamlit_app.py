@@ -72,13 +72,14 @@ def intro():
     3. **Visualize os resultados** por meio de mapas e relatórios.
     """)
 
-
     # Equipe e Contato
-        st.subheader("Equipe e Contato")
-        st.markdown("""Este projeto é desenvolvido para o 1° Datathon dentro do **6° Engope (Encontro Goiano de Probabilidade e Estatística)** da UFG.
-    
-        Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**""")
-        st.markdown("---")
+    st.subheader("Equipe e Contato")
+    st.markdown("""
+    Este projeto é desenvolvido para o 1\\u00B0 Datathon dentro do **6\\u00B0 Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
+
+    Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**
+    """)
+    st.markdown("---")
 
 
     ### 6.1 Coleta de Campo
