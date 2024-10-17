@@ -45,7 +45,7 @@ def intro():
     st.title("Plataforma de Monitoramento de Degradação de Pastagens")
     st.header("Classificação e Visualização Temática das Unidades Amostrais")
 
-    st.markdown("""O grupo Brachiara - LAB foi criado com o objetivo de desenvolver soluções inovadoras para combater a degradação de pastagens, um problema relevante para a sustentabilidade agropecuária. A participação no I Datathon, promovido durante o VI ENGOPE – Encontro Goiano de Probabilidade e Estatística, pelo Instituto de Matemática e Estatística (IME) da UFG, nos permitiu aplicar conceitos de análise de dados e estatística de maneira prática e colaborativa.""")
+    st.markdown("""O grupo **Brachiara LAB** foi criado com o objetivo de desenvolver soluções inovadoras para combater a degradação de pastagens, um problema relevante para a sustentabilidade agropecuária. A participação no **I Datathon**, promovido durante o **VI ENGOPE – Encontro Goiano de Probabilidade e Estatística**, pelo Instituto de Matemática e Estatística **(IME)** da UFG, nos permitiu aplicar conceitos de análise de dados e estatística de maneira prática e colaborativa.""")
 
     # Descrição inicial
     st.markdown("""
