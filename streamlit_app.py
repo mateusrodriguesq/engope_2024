@@ -54,6 +54,7 @@ def intro():
     Esta plataforma tem como objetivo **classificar as unidades amostrais** de pastagens, **identificando níveis de degradação** com base em variáveis ecológicas e de manejo. A partir das análises, é gerada uma **visualização final por meio de um mapa temático**, permitindo uma compreensão espacial intuitiva e facilitando a tomada de decisão para o manejo sustentável das áreas avaliadas.
     """)
 
+    st.markdown('---')    
     # Funcionalidades
     st.subheader("Funcionalidades")
     st.markdown("""
@@ -63,11 +64,14 @@ def intro():
     - **Exportação de Relatórios**: Exporte relatórios completos ou personalizados em PDF, contendo os principais insights das análises.
     """)
 
+    st.markdown('---')
     # Sobre o Conjunto de Dados
     st.subheader("Sobre o Conjunto de Dados")
     st.markdown("""
     O monitoramento das **pastagens tropicais brasileiras** é essencial para garantir um manejo sustentável, dada a sua ampla diversidade de espécies e a sua vulnerabilidade à degradação. O conjunto de dados utilizado foi coletado em Goiás, em parceria com o **MapBiomas**, com o objetivo de mapear as áreas de pastagem e avaliar seu nível de degradação, essencial para a preservação ambiental.
     """)
+
+    st.markdown('---')
     # Como Funciona
     st.subheader("Como Funciona")
     st.markdown("""
@@ -76,6 +80,7 @@ def intro():
     3. **Visualize os resultados** por meio de mapas e relatórios.
     """)
 
+    st.markdown('---')
 # Equipe e Contato
     st.subheader("Equipe e Contato")
     st.markdown("""
@@ -98,8 +103,9 @@ def intro():
         st.markdown("""A coleta foi realizada dentro de unidades amostrais (UA) de **30 x 30 m (900 m\u00B2)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
             """)
 
+        st.markdown("---")     
+        st.subheader("Variáveis Avaliadas")
         st.markdown("""
-    ###Variáveis Avaliadas
     As principais variáveis ecológicas foram analisadas por dois avaliadores em cada UA, que atribuíram notas de 1 a 7 para cada variável. As variáveis avaliadas incluem:
     - **Estágio de Desenvolvimento das Plantas**: Variável que analisa o estágio de crescimento das plantas na pastagem. Notas mais baixas indicam perfilhos jovens, enquanto notas mais altas indicam perfilhos em estágio reprodutivo avançado.
     - **Presença de Plantas Invasoras**: Avalia a proporção de plantas invasoras presentes em relação à vegetação forrageira.
@@ -110,6 +116,7 @@ def intro():
     - **Potencial Produtivo**: Projeção da capacidade da pastagem para os próximos 12 meses.
     """)
 
+        st.markdown("---")
     # Detalhes das variáveis com tabelas explicativas
     ### Escalas de Avaliação das Variáveis:
         st.markdown("""
@@ -120,8 +127,10 @@ def intro():
     4. Início do processo de alongamento, senescência de algumas folhas.
     5. Inflorescência se desenvolvendo, folhas senescentes.
     6. Alta quantidade de folhas senescentes, baixa relação folha:colmo.
-    7. Pasto seco, predominância de folhas senescentes e mortas.
+    7. Pasto seco, predominância de folhas senescentes e mortas.""")
 
+        st.markdown("---")
+        st.markdown("""
     **Presença de Plantas Invasoras**:
     1. Nenhuma planta invasora.
     2. Até 10% da área com invasoras.
@@ -129,8 +138,10 @@ def intro():
     4. Entre 30% e 50% da área com invasoras.
     5. Entre 50% e 70% da área com invasoras.
     6. Entre 70% e 90% da área com invasoras.
-    7. Mais de 90% da área com invasoras.
+    7. Mais de 90% da área com invasoras.""")
 
+        st.markdown("---")
+        st.markdown("""
     **Cobertura Vegetal do Solo**:
     1. Menos de 10% de vegetação viva.
     2. Cobertura entre 10% e 30%.
@@ -138,8 +149,10 @@ def intro():
     4. Cobertura entre 45% e 55%.
     5. Cobertura entre 55% e 65%.
     6. Cobertura entre 65% e 90%.
-    7. Mais de 90% de vegetação viva.
+    7. Mais de 90% de vegetação viva.""")
 
+        st.markdown("---")
+        st.markdown("""  
     **Condição Atual da Pastagem**:
     1. Degradação intensa, TL < 0,3 UA/ha.
     2. Severamente degradada, TL entre 0,3 a 0,5 UA/ha.
