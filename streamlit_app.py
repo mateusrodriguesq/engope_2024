@@ -77,8 +77,7 @@ def intro():
     st.markdown("""
     Este projeto é desenvolvido para o 1\\u00B0 Datathon dentro do **6\\u00B0 Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
 
-    Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**
-    """)
+    Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**""")
     st.markdown("---")
 
 
