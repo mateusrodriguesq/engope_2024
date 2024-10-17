@@ -76,6 +76,14 @@ def intro():
     st.subheader("Equipe e Contato")
     st.markdown("""
     Este projeto é desenvolvido para o **1º Datathon** do **6º Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
+
+    Colaboradores do projeto:
+    ALUNOS:
+    DANILO SILVA CARVALHO DE OLIVEIRA  - IME
+    JOSÉ DIOGO FERREIRA DE MELO - IME
+    MATEUS RODRIGUES ALVES DE AQUINO - IME
+    MATHEUS HENRIQUE DE SOUZA CARVALHO  - IME
+    VINICIUS FERREIRA AMORIM SANTANA - IME
     
     Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**""")
 
