@@ -64,6 +64,25 @@ def intro():
     st.markdown("""
     O monitoramento das **pastagens tropicais brasileiras** é essencial para garantir um manejo sustentável, dada a sua ampla diversidade de espécies e a sua vulnerabilidade à degradação. O conjunto de dados utilizado foi coletado em Goiás, em parceria com o **MapBiomas**, com o objetivo de mapear as áreas de pastagem e avaliar seu nível de degradação, essencial para a preservação ambiental.
 
+    # Como Funciona
+        st.subheader("Como Funciona")
+        st.markdown("""
+    1. **Navegue pelo menu** e selecione a página desejada.
+    2. **Escolha as variáveis e parâmetros** para realizar a classificação.
+    3. **Visualize os resultados** por meio de mapas e relatórios.
+    """)
+
+
+    # Equipe e Contato
+        st.subheader("Equipe e Contato")
+        st.markdown("""
+        Este projeto é desenvolvido para o 1° Datathon dentro do **6° Engope (Encontro Goiano de Probabilidade e Estatística)** da UFG.
+    
+        Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**
+        """)
+        st.markdown("---")
+
+
     ### 6.1 Coleta de Campo
     A coleta foi realizada dentro de unidades amostrais (UA) de **30x30m (900m²)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
 """)
@@ -123,26 +142,6 @@ def intro():
     7. Excelente condição, TL > 3,0 UA/ha.
     """)
 
-    # Como Funciona
-        st.subheader("Como Funciona")
-        st.markdown("""
-    1. **Navegue pelo menu** e selecione a página desejada.
-    2. **Escolha as variáveis e parâmetros** para realizar a classificação.
-    3. **Visualize os resultados** por meio de mapas e relatórios.
-    """)
-
-    # Exemplo de Visualização
-        st.subheader("Exemplo de Visualização")
-        st.markdown("Clique no botão abaixo para acessar um **exemplo de mapa temático** gerado pela plataforma.")
-
-    # Equipe e Contato
-        st.subheader("Equipe e Contato")
-        st.markdown("""
-        Este projeto é desenvolvido para o 1° Datathon dentro do **6° Engope (Encontro Goiano de Probabilidade e Estatística)** da UFG.
-    
-        Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**
-        """)
-        st.markdown("---")
 
 
 def page_eda():
