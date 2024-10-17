@@ -1,38 +1,22 @@
 # Bibliotecas para deploy em Streamlit
-import streamlit as st
-
-# Bibliotecas para análise de dados
-import pandas as pd
-import numpy as np
-
-# Bibliotecas para visualização de dados
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
-import plotly.graph_objects as go
-
-# Bibliotecas para modelagem e estatística
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
-
-# Bibliotecas para modelos de classificação
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.ensemble import ExtraTreesRegressor
-
-# Biblioteca para plotagem de mapas
-from gmplot import GoogleMapPlotter
-
 # Bibliotecas para manipulação de arquivos e expressões regulares
 import os
 import re
 
+# Bibliotecas para análise de dados
+import pandas as pd
+# Bibliotecas para visualização de dados
+import plotly.express as px
+import streamlit as st
+
 # Importação de funções e classes do projeto
 from import_databases import import_db
-from import_databases import import_database
 from models import page_classifier
 from run_model import page_run_model, exibir_teoria_do_modelo
+
+# Bibliotecas para modelagem e estatística
+# Bibliotecas para modelos de classificação
+# Biblioteca para plotagem de mapas
 
 st.set_page_config(layout="wide", page_title="Dashboard - Engope 2024", page_icon=":bar_chart:")
 
