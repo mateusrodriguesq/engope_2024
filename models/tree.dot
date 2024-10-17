@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="Invasoras <= 4.75\nfriedman_mse = 0.102\nsamples = 1017\nvalue = -0.0", fillcolor="#fcf0e7"] ;
+1 [label="Invasoras <= 4.25\nfriedman_mse = 0.001\nsamples = 863\nvalue = -0.114", fillcolor="#fcf2ea"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="Altura <= 12.9\nfriedman_mse = 0.0\nsamples = 816\nvalue = -0.115", fillcolor="#fcf2ea"] ;
+1 -> 2 ;
+3 [label="friedman_mse = -0.0\nsamples = 280\nvalue = -0.904", fillcolor="#ffffff"] ;
+2 -> 3 ;
+4 [label="friedman_mse = 0.0\nsamples = 536\nvalue = -0.904", fillcolor="#ffffff"] ;
+2 -> 4 ;
+5 [label="Manejo <= 2.25\nfriedman_mse = 0.021\nsamples = 47\nvalue = -0.094", fillcolor="#fcf2ea"] ;
+1 -> 5 ;
+6 [label="friedman_mse = 0.0\nsamples = 38\nvalue = -0.904", fillcolor="#ffffff"] ;
+5 -> 6 ;
+7 [label="friedman_mse = 0.099\nsamples = 9\nvalue = -0.031", fillcolor="#fcf1e8"] ;
+5 -> 7 ;
+8 [label="CobertSolo <= 2.75\nfriedman_mse = 0.186\nsamples = 154\nvalue = 0.638", fillcolor="#fae5d7"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="Altura <= 16.65\nfriedman_mse = 0.109\nsamples = 16\nvalue = 0.01", fillcolor="#fcf0e7"] ;
+8 -> 9 ;
+10 [label="friedman_mse = 0.0\nsamples = 13\nvalue = -0.904", fillcolor="#ffffff"] ;
+9 -> 10 ;
+11 [label="friedman_mse = 0.222\nsamples = 3\nvalue = 4.335", fillcolor="#eda876"] ;
+9 -> 11 ;
+12 [label="Invasoras <= 5.25\nfriedman_mse = 0.144\nsamples = 138\nvalue = 0.711", fillcolor="#f9e4d5"] ;
+8 -> 12 ;
+13 [label="friedman_mse = 0.242\nsamples = 51\nvalue = 3.718", fillcolor="#efb286"] ;
+12 -> 13 ;
+14 [label="friedman_mse = 0.033\nsamples = 87\nvalue = 6.683", fillcolor="#e58139"] ;
+12 -> 14 ;
+}
