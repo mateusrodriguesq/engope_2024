@@ -65,8 +65,8 @@ def intro():
     O monitoramento das **pastagens tropicais brasileiras** é essencial para garantir um manejo sustentável, dada a sua ampla diversidade de espécies e a sua vulnerabilidade à degradação. O conjunto de dados utilizado foi coletado em Goiás, em parceria com o **MapBiomas**, com o objetivo de mapear as áreas de pastagem e avaliar seu nível de degradação, essencial para a preservação ambiental.
     """)
     # Como Funciona
-        st.subheader("Como Funciona")
-        st.markdown("""
+    st.subheader("Como Funciona")
+    st.markdown("""
     1. **Navegue pelo menu** e selecione a página desejada.
     2. **Escolha as variáveis e parâmetros** para realizar a classificação.
     3. **Visualize os resultados** por meio de mapas e relatórios.
