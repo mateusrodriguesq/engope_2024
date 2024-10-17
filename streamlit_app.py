@@ -78,7 +78,6 @@ def intro():
     Este projeto é desenvolvido para o **1º Datathon** do **6º Encontro Goiano de Probabilidade e Estatística (Engope)** do IME-UFG.
 
     Colaboradores do projeto:
-    ALUNOS:
     Danilo Silva Caravalho de Oliveira  - IME
     José Diogo Ferreira de Melo - IME
     Mateus Rrodrigues Alves de Aquino - IME
