@@ -82,8 +82,7 @@ def intro():
     st.markdown("---")
 
     st.markdown("""
-    ###Coleta de Campo
-    A coleta foi realizada dentro de unidades amostrais (UA) de **30 x 30 m (900 m\u00B2)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
+    ###Coleta de Campo: A coleta foi realizada dentro de unidades amostrais (UA) de **30 x 30 m (900 m\u00B2)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.
     """)
     if st.button("Ver mais informações sobre a coleta de campo"):
 
