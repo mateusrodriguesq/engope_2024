@@ -25,7 +25,7 @@ def page_classifier():
     st.sidebar.write("O melhor modelo será salvo e exibido com suas métricas de avaliação.")
 
     # Botão para rodar o processo de modelagem
-    st.sidebar.warning("Este processo pode demorar alguns minutos e a página performar lentamente por um tempo")
+    st.sidebar.error("Este processo pode demorar diversos minutos e a página performar lentamente por um tempo, como o projeto já vem com o modelo pré-definido não é recomendado executar o comando.")
     if st.sidebar.button("Clique para rodar a Análise de Classificação e Modelagem com Busca de Hiperparâmetros"):
         st.warning("Aguarde, o processo pode demorar alguns minutos...")
         models_start()
