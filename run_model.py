@@ -210,14 +210,13 @@ def exibir_teoria_do_modelo():
     O **Gradient Boosting** é um modelo poderoso que cria várias pequenas "árvores de decisão" e as combina para formar um modelo forte.
     A ideia é corrigir os erros cometidos pelas árvores anteriores, tornando cada uma um pouco melhor que a anterior.
 
-    A fórmula matemática básica do Gradient Boosting é:
-
-    """)
+    A fórmula matemática básica do Gradient Boosting é: """)
+    
     st.latex(r"""
     \hat{y}_i = y_i + \sum_{m=1}^{M} \gamma_m h_m(x_i)
     """)
     
-    st.write("""Onde:
+    st.write(""" Onde:
     - y_i é a predição final para a amostra \( i \).
     - yi é o valor inicial.
     - γmHm(xi) são as árvores de decisão ajustadas ao longo de várias iterações.
