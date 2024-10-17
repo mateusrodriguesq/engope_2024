@@ -2,6 +2,8 @@
 
 ## Classificação e Visualização Temática das Unidades Amostrais
 
+Link do projeto: https://engope-2024.streamlit.app
+
 O grupo **Brachiara LAB** foi criado com o objetivo de desenvolver soluções inovadoras para combater a degradação de pastagens, um problema relevante para a sustentabilidade agropecuária. A participação no **1º Datathon**, promovido durante o **6º ENGOPE** – Encontro Goiano de Probabilidade e Estatística, pelo Instituto de Matemática e Estatística (IME) da UFG, nos permitiu aplicar conceitos de análise de dados e estatística de maneira prática e colaborativa.
 
 Esta plataforma tem como objetivo **classificar as unidades amostrais de pastagens**, identificando níveis de degradação com base em variáveis ecológicas e de manejo. A partir das análises, é gerada uma **visualização final** por meio de um **mapa temático**, permitindo uma compreensão espacial intuitiva e facilitando a tomada de decisão para o manejo sustentável das áreas avaliadas.
