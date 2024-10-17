@@ -72,22 +72,23 @@ def intro():
     3. **Visualize os resultados** por meio de mapas e relatórios.
     """)
 
-    # Equipe e Contato
+# Equipe e Contato
     st.subheader("Equipe e Contato")
     st.markdown("""
-    Este projeto é desenvolvido para o 1\\u00B0 Datathon dentro do **6\\u00B0 Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
-
+    Este projeto é desenvolvido para o 1º Datathon dentro do **6º Encontro Goiano de Probabilidade e Estatística (Engope)** da UFG.
+    
     Para dúvidas ou mais informações, entre em contato pelo e-mail: **mateusrodriguesq@gmail.com**""")
+
     st.markdown("---")
 
     st.markdown("""
-    ### 6.1 Coleta de Campo
+    ###Coleta de Campo
     A coleta foi realizada dentro de unidades amostrais (UA) de **30 x 30 m (900 m\u00B2)**, cada uma representando um pixel dentro da área mapeada. A localização das UAs foi definida por avaliadores em campo utilizando GPS.""")
 
     if st.button("Ver mais informações sobre a coleta de campo"):
 
         st.markdown("""
-    ### 6.2 Variáveis Avaliadas
+    ###Variáveis Avaliadas
     As principais variáveis ecológicas foram analisadas por dois avaliadores em cada UA, que atribuíram notas de 1 a 7 para cada variável. As variáveis avaliadas incluem:
     - **Estágio de Desenvolvimento das Plantas**: Variável que analisa o estágio de crescimento das plantas na pastagem. Notas mais baixas indicam perfilhos jovens, enquanto notas mais altas indicam perfilhos em estágio reprodutivo avançado.
     - **Presença de Plantas Invasoras**: Avalia a proporção de plantas invasoras presentes em relação à vegetação forrageira.
