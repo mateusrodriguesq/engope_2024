@@ -731,13 +731,12 @@ def page_conhecimento_plantas():
     else:
         st.warning('Imagem não encontrada para essa planta.')
 
-    # Exibe a descrição da planta selecionada
     st.markdown(f"""
     <div style="text-align: center;">
         <h2>{selected_plant}</h2>
         <p>{plant_descriptions[selected_plant]['descricao']}</p>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)  # Fechando as aspas triplas corretamente
 
     # Adiciona a tabela com informações adicionais
     st.markdown("<h3>Informações Adicionais:</h3>", unsafe_allow_html=True)
