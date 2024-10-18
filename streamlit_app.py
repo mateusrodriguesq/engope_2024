@@ -731,11 +731,7 @@ def page_conhecimento_plantas():
         st.warning('Imagem não encontrada para essa planta.')
 
     html_content = """
-    <div style="text-align: center;">
-        <h2>{selected_plant}</h2>
-        <p>{plant_descriptions[selected_plant]['descricao']}</p>
-    </div>
-    """
+    <div style="text-align: center;"><h2>{selected_plant}</h2><p>{plant_descriptions[selected_plant]['descricao']}</p></div>"""
 
 # Usando a função st.markdown com o parâmetro correto
     st.markdown(html_content, unsafe_allow_html=True)
