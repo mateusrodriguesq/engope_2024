@@ -730,7 +730,7 @@ def page_conhecimento_plantas():
     else:
         st.warning('Imagem não encontrada para essa planta.')
 
-    html_content = f"""
+    html_content = """
     <div style="text-align: center;">
         <h2>{selected_plant}</h2>
         <p>{plant_descriptions[selected_plant]['descricao']}</p>
