@@ -221,113 +221,113 @@ def page_eda():
             <span>{label}</span>
             <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
         </div>""", unsafe_allow_html=True)
-        st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")""")
-
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        metric_with_info('Altura Média (cm)', round(dados['Altura'].mean(), 2), round(dados['Altura'].std(), 2), 'ALTURA')
-    with c2:
-        metric_with_info('Estágio de Desenvolvimento Médio', round(dados['EstDesenv'].mean(), 2), round(dados['EstDesenv'].std(), 2), 'EstDesenv')
-    with c3:
-        metric_with_info('Presença de Invasoras Média', round(dados['Invasoras'].mean(), 2), round(dados['Invasoras'].std(), 2), 'INVASORAS')
-
-    c4, c5, c6 = st.columns(3)
-    with c4:
-        metric_with_info('Presença de Cupins Média', round(dados['Cupins'].mean(), 2), round(dados['Cupins'].std(), 2), 'CUPINS')
-    with c5:
-        metric_with_info('Cobertura do Solo Média', round(dados['CobertSolo'].mean(), 2), round(dados['CobertSolo'].std(), 2), 'CobertSolo')
-    with c6:
-        metric_with_info('Disponibilidade de Forragem Média', round(dados['DispForr'].mean(), 2), round(dados['DispForr'].std(), 2), 'DispForr')
-
-    c7, c8, c9, c10, c11 = st.columns(5)
-    with c7:
-        metric_with_info('Disponibilidade de Folhas Verdes Média', round(dados['DispFolhVerd'].mean(), 2), round(dados['DispFolhVerd'].std(), 2), 'DispFolhVerd')
-    with c8:
-        metric_with_info('Condição Atual Média', round(dados['CondAtual'].mean(), 2), round(dados['CondAtual'].std(), 2), 'CondAtual')
-    with c9:
-        metric_with_info('Potencial Produtivo Médio', round(dados['PotProd'].mean(), 2), round(dados['PotProd'].std(), 2), 'PotProd')
-    with c10:
-        metric_with_info('Nível de Degradação Médio', round(dados['Degrad'].mean(), 2), round(dados['Degrad'].std(), 2), 'Degrad')
-    with c11:
-        metric_with_info('Manejo Médio', round(dados['Manejo'].mean(), 2), round(dados['Manejo'].std(), 2), 'Manejo')
-
-    c13, c14, c15 = st.columns(3)
-    with c13:
-        metric_with_info('Dentro ou fora da estrada', dados['LOCCLASS'].iloc[0], '', 'LOCCLASS')
-    with c14:
-        color = ''
-        if dados['CLASS_DED'].iloc[0] == 'Não Degradada':
-            color = 'green'
-        elif dados['CLASS_DED'].iloc[0] == 'Degradada Baixa':
-            color = 'yellow'
-        elif dados['CLASS_DED'].iloc[0] == 'Degradada Moderada':
-            color = 'orange'
-        elif dados['CLASS_DED'].iloc[0] == 'Degradada Agrícola Severa':
-            color = 'red'
-        elif dados['CLASS_DED'].iloc[0] == 'Degradada Biológica Severa':
-            color = 'purple'
-
-        st.markdown(
-            f"<div style='font-size:25px;'>Classe de Degradação: <span style='color:{color}; font-weight:bold;'>{dados['CLASS_DED'].iloc[0]}</span></div>",
-            unsafe_allow_html=True)
-    with c15:
-        metric_with_info('Espécie', dados['Especie01'].iloc[0], '', 'ESPECIE_01')
-    st.markdown('---')
-
-
-
-    st.write('**Dados por Avaliador**')
-    # Order the data_filtered like [['Avaliador', 'Data', 'Especie01', 'Altura', 'EstDesenv', 'Invasoras', 'Cupins', 'CobertSolo', 'DispForr', 'DispFolhVerd', 'CondAtual', 'PotProd', 'Degrad', 'Manejo', LOCCLASS', 'CLASS_DED']]
-    data_filtered_a = dados[['Avaliador', 'Ponto', 'Data', 'Especie01', 'Altura', 'EstDesenv', 'Invasoras', 'Cupins', 'CobertSolo', 'DispForr', 'DispFolhVerd', 'CondAtual', 'PotProd', 'Degrad', 'Manejo', 'LOCCLASS', 'CLASS_DED']]
-    st.write(data_filtered_a)
-
-    #if especies is not null, show the distribution of CLASS_DED sum by especies in percentage bar chart not stacked (value counts)
-    # if especies is not null, show the distribution of CLASS_DED sum by especies in percentage bar chart not stacked (value counts)
-    if especies:
-        # st.write('**Distribuição das Classes de Degradação por Espécie**')
-        data_filtered_b = data_filtered_a.copy()
-        data_filtered_b = data_filtered_b['CLASS_DED'].value_counts(normalize=True).reset_index()
-        data_filtered_b.columns = ['CLASS_DED', 'Percentage']
-        data_filtered_b['Percentage'] = round(data_filtered_b['Percentage'] * 100, 2).astype(str) + ' %'
-
-        fig = px.bar(data_filtered_b, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Espécie')
-        st.plotly_chart(fig)
-
-    if avaliadores:
-        # st.write('**Distribuição das Classes de Degradação por Avaliador**')
-        data_filtered_c = data_filtered_a.copy()
-        data_filtered_c = data_filtered_c['CLASS_DED'].value_counts(normalize=True).reset_index()
-        data_filtered_c.columns = ['CLASS_DED', 'Percentage']
-        data_filtered_c['Percentage'] = round(data_filtered_c['Percentage'] * 100, 2).astype(str) + ' %'
-
-        fig = px.bar(data_filtered_c, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Avaliador')
-        st.plotly_chart(fig)
-
-        #count Pontos visitados by Avaliador sum by Ponto
-        data_filtered_d = data_filtered_a.copy()
-        data_filtered_d = data_filtered_d.groupby(['Avaliador', 'Ponto']).size().reset_index(name='Count')
-        st.write('**Pontos Visitados por Avaliador**')
-        st.metric(label='Pontos Visitados', value=data_filtered_d['Count'].sum())
-
-    if pontos:
-        # st.write('**Distribuição das Classes de Degradação por Ponto**')
-        data_filtered_e = data_filtered_a.copy()
-        data_filtered_e = data_filtered_e['CLASS_DED'].value_counts(normalize=True).reset_index()
-        data_filtered_e.columns = ['CLASS_DED', 'Percentage']
-        data_filtered_e['Percentage'] = round(data_filtered_e['Percentage'] * 100, 2).astype(str) + ' %'
-
-        fig = px.bar(data_filtered_e, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Ponto')
-        st.plotly_chart(fig)
-
-        #distribuição de plantas na região
-        st.write('**Distribuição de Plantas na Região**')
-        data_filtered_f = data_filtered_a.copy()
-        data_filtered_f = data_filtered_f['Especie01'].value_counts(normalize=True).reset_index()
-        data_filtered_f.columns = ['Especie01', 'Percentage']
-        data_filtered_f['Percentage'] = round(data_filtered_f['Percentage'] * 100, 2).astype(str) + ' %'
-
-        fig = px.bar(data_filtered_f, x='Especie01', y='Percentage', text='Percentage', color='Especie01', labels={'Especie01': 'Espécie', 'Percentage': 'Porcentagem'}, title='Distribuição de Plantas na Região')
-        st.plotly_chart(fig)
+        st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
+    
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            metric_with_info('Altura Média (cm)', round(dados['Altura'].mean(), 2), round(dados['Altura'].std(), 2), 'ALTURA')
+        with c2:
+            metric_with_info('Estágio de Desenvolvimento Médio', round(dados['EstDesenv'].mean(), 2), round(dados['EstDesenv'].std(), 2), 'EstDesenv')
+        with c3:
+            metric_with_info('Presença de Invasoras Média', round(dados['Invasoras'].mean(), 2), round(dados['Invasoras'].std(), 2), 'INVASORAS')
+    
+        c4, c5, c6 = st.columns(3)
+        with c4:
+            metric_with_info('Presença de Cupins Média', round(dados['Cupins'].mean(), 2), round(dados['Cupins'].std(), 2), 'CUPINS')
+        with c5:
+            metric_with_info('Cobertura do Solo Média', round(dados['CobertSolo'].mean(), 2), round(dados['CobertSolo'].std(), 2), 'CobertSolo')
+        with c6:
+            metric_with_info('Disponibilidade de Forragem Média', round(dados['DispForr'].mean(), 2), round(dados['DispForr'].std(), 2), 'DispForr')
+    
+        c7, c8, c9, c10, c11 = st.columns(5)
+        with c7:
+            metric_with_info('Disponibilidade de Folhas Verdes Média', round(dados['DispFolhVerd'].mean(), 2), round(dados['DispFolhVerd'].std(), 2), 'DispFolhVerd')
+        with c8:
+            metric_with_info('Condição Atual Média', round(dados['CondAtual'].mean(), 2), round(dados['CondAtual'].std(), 2), 'CondAtual')
+        with c9:
+            metric_with_info('Potencial Produtivo Médio', round(dados['PotProd'].mean(), 2), round(dados['PotProd'].std(), 2), 'PotProd')
+        with c10:
+            metric_with_info('Nível de Degradação Médio', round(dados['Degrad'].mean(), 2), round(dados['Degrad'].std(), 2), 'Degrad')
+        with c11:
+            metric_with_info('Manejo Médio', round(dados['Manejo'].mean(), 2), round(dados['Manejo'].std(), 2), 'Manejo')
+    
+        c13, c14, c15 = st.columns(3)
+        with c13:
+            metric_with_info('Dentro ou fora da estrada', dados['LOCCLASS'].iloc[0], '', 'LOCCLASS')
+        with c14:
+            color = ''
+            if dados['CLASS_DED'].iloc[0] == 'Não Degradada':
+                color = 'green'
+            elif dados['CLASS_DED'].iloc[0] == 'Degradada Baixa':
+                color = 'yellow'
+            elif dados['CLASS_DED'].iloc[0] == 'Degradada Moderada':
+                color = 'orange'
+            elif dados['CLASS_DED'].iloc[0] == 'Degradada Agrícola Severa':
+                color = 'red'
+            elif dados['CLASS_DED'].iloc[0] == 'Degradada Biológica Severa':
+                color = 'purple'
+    
+            st.markdown(
+                f"<div style='font-size:25px;'>Classe de Degradação: <span style='color:{color}; font-weight:bold;'>{dados['CLASS_DED'].iloc[0]}</span></div>",
+                unsafe_allow_html=True)
+        with c15:
+            metric_with_info('Espécie', dados['Especie01'].iloc[0], '', 'ESPECIE_01')
+        st.markdown('---')
+    
+    
+    
+        st.write('**Dados por Avaliador**')
+        # Order the data_filtered like [['Avaliador', 'Data', 'Especie01', 'Altura', 'EstDesenv', 'Invasoras', 'Cupins', 'CobertSolo', 'DispForr', 'DispFolhVerd', 'CondAtual', 'PotProd', 'Degrad', 'Manejo', LOCCLASS', 'CLASS_DED']]
+        data_filtered_a = dados[['Avaliador', 'Ponto', 'Data', 'Especie01', 'Altura', 'EstDesenv', 'Invasoras', 'Cupins', 'CobertSolo', 'DispForr', 'DispFolhVerd', 'CondAtual', 'PotProd', 'Degrad', 'Manejo', 'LOCCLASS', 'CLASS_DED']]
+        st.write(data_filtered_a)
+    
+        #if especies is not null, show the distribution of CLASS_DED sum by especies in percentage bar chart not stacked (value counts)
+        # if especies is not null, show the distribution of CLASS_DED sum by especies in percentage bar chart not stacked (value counts)
+        if especies:
+            # st.write('**Distribuição das Classes de Degradação por Espécie**')
+            data_filtered_b = data_filtered_a.copy()
+            data_filtered_b = data_filtered_b['CLASS_DED'].value_counts(normalize=True).reset_index()
+            data_filtered_b.columns = ['CLASS_DED', 'Percentage']
+            data_filtered_b['Percentage'] = round(data_filtered_b['Percentage'] * 100, 2).astype(str) + ' %'
+    
+            fig = px.bar(data_filtered_b, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Espécie')
+            st.plotly_chart(fig)
+    
+        if avaliadores:
+            # st.write('**Distribuição das Classes de Degradação por Avaliador**')
+            data_filtered_c = data_filtered_a.copy()
+            data_filtered_c = data_filtered_c['CLASS_DED'].value_counts(normalize=True).reset_index()
+            data_filtered_c.columns = ['CLASS_DED', 'Percentage']
+            data_filtered_c['Percentage'] = round(data_filtered_c['Percentage'] * 100, 2).astype(str) + ' %'
+    
+            fig = px.bar(data_filtered_c, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Avaliador')
+            st.plotly_chart(fig)
+    
+            #count Pontos visitados by Avaliador sum by Ponto
+            data_filtered_d = data_filtered_a.copy()
+            data_filtered_d = data_filtered_d.groupby(['Avaliador', 'Ponto']).size().reset_index(name='Count')
+            st.write('**Pontos Visitados por Avaliador**')
+            st.metric(label='Pontos Visitados', value=data_filtered_d['Count'].sum())
+    
+        if pontos:
+            # st.write('**Distribuição das Classes de Degradação por Ponto**')
+            data_filtered_e = data_filtered_a.copy()
+            data_filtered_e = data_filtered_e['CLASS_DED'].value_counts(normalize=True).reset_index()
+            data_filtered_e.columns = ['CLASS_DED', 'Percentage']
+            data_filtered_e['Percentage'] = round(data_filtered_e['Percentage'] * 100, 2).astype(str) + ' %'
+    
+            fig = px.bar(data_filtered_e, x='CLASS_DED', y='Percentage', text='Percentage', color='CLASS_DED', labels={'CLASS_DED': 'Classe de Degradação', 'Percentage': 'Porcentagem'}, title='Distribuição das Classes de Degradação por Ponto')
+            st.plotly_chart(fig)
+    
+            #distribuição de plantas na região
+            st.write('**Distribuição de Plantas na Região**')
+            data_filtered_f = data_filtered_a.copy()
+            data_filtered_f = data_filtered_f['Especie01'].value_counts(normalize=True).reset_index()
+            data_filtered_f.columns = ['Especie01', 'Percentage']
+            data_filtered_f['Percentage'] = round(data_filtered_f['Percentage'] * 100, 2).astype(str) + ' %'
+    
+            fig = px.bar(data_filtered_f, x='Especie01', y='Percentage', text='Percentage', color='Especie01', labels={'Especie01': 'Espécie', 'Percentage': 'Porcentagem'}, title='Distribuição de Plantas na Região')
+            st.plotly_chart(fig)
 
 
 
@@ -730,10 +730,8 @@ def page_conhecimento_plantas():
     else:
         st.warning('Imagem não encontrada para essa planta.')
 
-    html_content = f"""<div style="text-align: center;"><h2>{selected_plant}</h2><p>{plant_descriptions[selected_plant]['descricao']}</p></div>"""
-
 # Usando a função st.markdown com o parâmetro correto
-    st.markdown(html_content, unsafe_allow_html=True)
+    st.markdown(f"""<div style="text-align: center;"><h2>{selected_plant}</h2><p>{plant_descriptions[selected_plant]['descricao']}</p></div>""", unsafe_allow_html=True)
 
     # Adiciona a tabela com informações adicionais
     st.markdown("<h3>Informações Adicionais:</h3>", unsafe_allow_html=True)
