@@ -723,7 +723,6 @@ def page_conhecimento_plantas():
 
 
     # Exibe a imagem da planta selecionada
-
     if os.path.exists(image_path):
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
@@ -731,12 +730,15 @@ def page_conhecimento_plantas():
     else:
         st.warning('Imagem não encontrada para essa planta.')
 
-    st.markdown(f"""
+    html_content = f"""
     <div style="text-align: center;">
         <h2>{selected_plant}</h2>
         <p>{plant_descriptions[selected_plant]['descricao']}</p>
     </div>
-    """, unsafe_allow_html=True)  # Fechando as aspas triplas corretamente
+    """
+
+# Usando a função st.markdown com o parâmetro correto
+    st.markdown(html_content, unsafe_allow_html=True)
 
     # Adiciona a tabela com informações adicionais
     st.markdown("<h3>Informações Adicionais:</h3>", unsafe_allow_html=True)
