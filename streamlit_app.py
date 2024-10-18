@@ -736,9 +736,7 @@ def page_conhecimento_plantas():
         f"""
         <div style="text-align: center;">
             <h2>{selected_plant}</h2>
-            <p>{plant_descriptions[selected_plant]['descricao']}</p>
-        </div>
-        """,
+            <p>{plant_descriptions[selected_plant]['descricao']}</p></div>""",
         unsafe_allow_html=True
     )
     # Adiciona a tabela com informações adicionais
