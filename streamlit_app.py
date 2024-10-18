@@ -221,7 +221,7 @@ def page_eda():
             <span>{label}</span>
             <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
         </div>""", unsafe_allow_html=True)
-        st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
+        st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")""")
 
     c1, c2, c3 = st.columns(3)
     with c1:
@@ -765,7 +765,6 @@ page_to_funcs = {
     'Página Inicial': intro,
     'Análise Exploratória': page_eda,
     'Conhecimento das Plantas': page_conhecimento_plantas,
-    'Classificador de modelos (Execução do Modelo)': page_classifier,
     'Classificação de pastagens (Predição)': page_run_model,
     'Teoria do modelo escolhido': exibir_teoria_do_modelo
 }
