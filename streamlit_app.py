@@ -164,16 +164,17 @@ def intro():
 
 
 
-def metric_with_info(label, value, delta, var_name, var_desc):
-    description = var_desc.get(var_name, "")
-    html_content = '''
+def metric_with_info(label, value, delta, description):
+    # Criar o HTML para a label e o ícone de informação
+    html_content = f'''
     <div style="display: flex; align-items: center;">
         <span>{label}</span>
         <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
     </div>
-    '''.format(label=label, description=description)
-    
+    '''
+    # Exibir o HTML da label e ícone de informação
     st.markdown(html_content, unsafe_allow_html=True)
+    # Exibir o componente de métrica
     st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
 
 
