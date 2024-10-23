@@ -163,6 +163,20 @@ def intro():
     7. Excelente condição, TL > 3,0 UA/ha.""")
 
 
+
+def metric_with_info(label, value, delta, var_name, var_desc):
+    description = var_desc.get(var_name, "")
+    html_content = '''
+    <div style="display: flex; align-items: center;">
+        <span>{label}</span>
+        <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
+    </div>
+    '''.format(label=label, description=description)
+    
+    st.markdown(html_content, unsafe_allow_html=True)
+    st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
+
+
 def page_eda():
     st.title('Análise Exploratória de Dados')
     importer = import_db()
@@ -212,20 +226,6 @@ def page_eda():
     st.markdown('---')
     st.write(
         '**Estatísticas Descritivas coletados por:** ' + avaliadores_str + ' **no Ponto** ' + '**' + ', '.join(pontos) + '**' + ' em ' + '**' + data + '**.')
-
-
-def metric_with_info(label, value, delta, var_name, var_desc):
-    description = var_desc.get(var_name, "")
-    html_content = '''
-    <div style="display: flex; align-items: center;">
-        <span>{label}</span>
-        <span style="margin-left: 5px; cursor: pointer;" title="{description}">ℹ️</span>
-    </div>
-    '''.format(label=label, description=description)
-    
-    st.markdown(html_content, unsafe_allow_html=True)
-    st.metric(label=label, value=value, delta=delta, label_visibility="collapsed")
-
 
 
     c1, c2, c3 = st.columns(3)
